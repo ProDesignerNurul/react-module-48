@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import {addToDb} from '../utilities/fakedb';
 import Cart from '../components/Cart/Cart';
 import Product from '../components/Product/Product';
 import './Shop.css';
@@ -20,6 +21,7 @@ const Shop = () => {
     const clickToAddCart = (product) => {
         const newCart = [...cart, product];
         setCart(newCart);
+        addToDb(product.id)
     }
 
     return (
